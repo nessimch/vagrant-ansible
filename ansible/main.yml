@@ -1,0 +1,25 @@
+---
+
+- name: install docker
+  hosts: all
+  become: yes
+  roles:
+    - docker-install
+
+#- name: build and run docker image
+#  hosts: front
+#  become: yes
+#  roles:
+#    - docker-image
+
+- name: install node on the server front and back
+  hosts: front-back
+  become: yes
+  roles:
+    - node-install
+
+- name: clone front repo from git
+  hosts: front
+  become: yes
+  roles:
+    - front-repo

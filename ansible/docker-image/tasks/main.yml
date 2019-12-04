@@ -1,0 +1,14 @@
+- name: Build Docker image from Dockerfile
+    docker_image:
+      name: front
+      path: docker
+      state: build
+
+    - name: Running the container
+      docker_container:
+        image: front
+        path: docker
+        state: running
+
+    - name: Check if container is running
+      shell: docker ps
