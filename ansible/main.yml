@@ -6,12 +6,6 @@
   roles:
     - docker-install
 
-#- name: build and run docker image
-#  hosts: front
-#  become: yes
-#  roles:
-#    - docker-image
-
 - name: install node on the server front and back
   hosts: front-back
   become: yes
@@ -23,3 +17,9 @@
   become: yes
   roles:
     - front-repo
+
+- name: clone back repo from git
+  hosts: back
+  become: yes
+  roles:
+    - back-repo

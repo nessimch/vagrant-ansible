@@ -1,2 +1,2 @@
 - name: clone repo git
-  git: repo='https://github.com/gothinkster/realworld.git' dest=/myFront clone=yes
+  git: repo='https://github.com/nessimch/front-client.git' dest=/myFront clone=yes
